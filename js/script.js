@@ -9,7 +9,7 @@
 */
 
 /*** 
-  an array of objects containing quotes 
+  an array of objects containing inspirational quotes 
 ***/
 
 let quotes = [
