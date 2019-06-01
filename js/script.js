@@ -9,11 +9,7 @@
 */
 
 /*** 
-<<<<<<< HEAD
-  an array of objects containing inspirational quotes 
-=======
-  an array of objects 
->>>>>>> parent of ec8cd93... adding clarification comment
+  an array of objects containing inspirational quotes; each object contains at least 'quote' and 'source' property
 ***/
 
 let quotes = [
