@@ -1,7 +1,4 @@
-/******************************************
-Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
-******************************************/
+
 
 /* I am expecting nearly exceptional because:
    — random background color when button is clicked
