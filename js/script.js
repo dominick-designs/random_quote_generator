@@ -9,7 +9,7 @@
 */
 
 /*** 
-  an array of objects 
+  an array of objects containing quotes
 ***/
 
 let quotes = [
