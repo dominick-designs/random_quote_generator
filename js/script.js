@@ -1,11 +1,8 @@
 
 
-/* I am expecting nearly exceptional because:
+/* 
    — random background color when button is clicked
    — automatically displays random quote every 30 seconds
-   — I can live with "meets expectations"
-   — I think there is a better way of doing printQuote rather than a lot of if / else statements; a "for" loop or ".map" etc...
-   — I could not get the myCategory to display properly; I think there is a way to do this using a for loop;
 */
 
 /*** 
@@ -46,7 +43,7 @@ let quotes = [
     source: "Jerry Garcia",
     citation: "Terrapin Station",
     year: "July 27, 1977"
-  },
+  }
 ]
 
 /***
@@ -62,27 +59,29 @@ function getRandomQuote(array) {
 /***
 a function that takes the random quote from the getRandomQuote function above and outputs to page
 ***/
-function printQuote(getQuotes) {
+function printQuote() {
   var getQuotes = getRandomQuote(quotes);
   var htmlGoesHere = '';
+  var quote = getQuotes.quote;
+  var source = getQuotes.source;
   var citation = getQuotes.citation;
   var year = getQuotes.year;
   var mycategory = getQuotes.mycategory;
 
   // build the html
   htmlGoesHere = `<div id="quote-box">  
-      <p class="quote">${getQuotes.quote}</p>
-  <p class="source">${getQuotes.source}`;
+      <p class="quote">${quote}</p>
+  <p class="source">${source}`;
 
 
  if (citation && !year) {  /* if there is citation and NOT year */
-    htmlGoesHere = htmlGoesHere + `<span class="citation">${getQuotes.citation}</span></p>
+    htmlGoesHere = htmlGoesHere + `<span class="citation">${citation}</span></p>
     </div>`
   } else if (year && !citation) { /* if there is year and NOT citation */
-    htmlGoesHere = htmlGoesHere + `<span class="year">${getQuotes.year}</span></p>
+    htmlGoesHere = htmlGoesHere + `<span class="year">${year}</span></p>
     </div>`
   } else if (citation && year) { /* if there are BOTH citation AND year */
-    htmlGoesHere = htmlGoesHere + `<span class="citation">${getQuotes.citation}</span><span class="year">${getQuotes.year}</span></p>
+    htmlGoesHere = htmlGoesHere + `<span class="citation">${citation}</span><span class="year">${year}</span></p>
     </div>`
   } else {
    htmlGoesHere = htmlGoesHere + `</p> </div>`
