@@ -57,7 +57,7 @@ function getRandomQuote(array) {
 /***
 a function that takes the random quote from the getRandomQuote function above and outputs to page
 ***/
-function printQuote() {
+const printQuote = () => {
   var getQuotes = getRandomQuote(quotes);
   var htmlGoesHere = '';
   var quote = getQuotes.quote;
@@ -76,27 +76,30 @@ function printQuote() {
   if (year) {
     htmlGoesHere = htmlGoesHere + `<span class="year">${getQuotes.year}</span>`;
   }
+  if (mycategory) {
+    htmlGoesHere = htmlGoesHere + `<span class="year">Category: ${getQuotes.mycategory}</span>`;
+  }
 
   htmlGoesHere = htmlGoesHere + `</p > </div >`;
 
   document.getElementById('quote-box').innerHTML = htmlGoesHere;
-}
+};
 
 /* function to create random color */
 
-function randomColor() {
+const randomColor = () => {
   var x = Math.floor(Math.random() * 256);
   var y = Math.floor(Math.random() * 256);
   var z = Math.floor(Math.random() * 256);
   var bgColor = "rgb(" + x + ", " + y + ", " + z + ")";
   document.body.style.background = bgColor;
-}
+};
 
-function timedDisplay() {
+const timedDisplay = () => {
   printQuote();
   var timed = setInterval(printQuote, 5000);
   var changeColor = setInterval(randomColor, 5000);
-}
+};
 
 // random quote and random color every 5 seconds
 window.addEventListener("load", timedDisplay, false);
