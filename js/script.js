@@ -1,12 +1,10 @@
-
-
 /* project summary
    — random background color when button is clicked (or automatically if no button)
    — automatically displays random quote every 30 seconds
 */
 
 /*** 
-  an array of objects containing inspirational quotes; each object contains at least 'quote' and 'source' property
+  an array of objects containing inspirational quotes
 ***/
 
 let quotes = [
