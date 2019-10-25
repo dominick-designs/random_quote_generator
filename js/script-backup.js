@@ -1,5 +1,3 @@
-
-
 /* project summary
    — random background color when button is clicked (or automatically if no button)
    — automatically displays random quote every 30 seconds
@@ -15,24 +13,24 @@ let quotes = [
     source: "A.C.Bhaktivedanta Swami Prabhupāda",
     citation: "Bhagavad - Gita As It Is",
     year: "1972",
-    mycategory: "inspirational"
+    category: "inspirational"
   },
   {
     quote: "Knowing Is Not Enough; We Must Apply. Wishing Is Not Enough; We Must Do.",
     source: "Johann Wolfgang Von Goethe",
-    mycategory: "entrepreneur"
+    category: "entrepreneur"
   },
   {
     quote: "And now here is my secret, a very simple secret: It is only with the heart that one can see rightly; what is essential is invisible to the eye.",
     source: "Antoine de Saint-Exupéry",
     citation: "The Little Prince",
     year: "1943",
-    mycategory: "children"
+    category: "children"
   },
   {
     quote: "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
     source: "Helen Keller",
-    mycategory: "inspirational"
+    category: "inspirational"
   },
   {
     quote: "Tell me and I forget. Teach me and I remember. Involve me and I learn.",
@@ -46,12 +44,13 @@ let quotes = [
   }
 ]
 
+console.log(quotes[0]);
 /***
   function to store a random number and output a random quote from the quotes variable above
 ***/
 
 function getRandomQuote(array) {
-  var storeRandomNumber;
+  let storeRandomNumber;
   storeRandomNumber = Math.floor(Math.random() * array.length);
   return array[storeRandomNumber];
 }
@@ -60,55 +59,59 @@ function getRandomQuote(array) {
 a function that takes the random quote from the getRandomQuote function above and outputs to page
 ***/
 function printQuote() {
-  var getQuotes = getRandomQuote(quotes);
-  var htmlGoesHere = '';
-  var quote = getQuotes.quote;
-  var source = getQuotes.source;
-  var citation = getQuotes.citation;
-  var year = getQuotes.year;
-  var mycategory = getQuotes.mycategory;
+  const getQuotes = getRandomQuote(quotes);
+  const quote = getQuotes.quote;
+  const source = getQuotes.source;
+  const citation = getQuotes.citation;
+  const year = getQuotes.year;
+  const category = getQuotes.category;
+  let htmlGoesHere = '';
 
   // build the html
-  htmlGoesHere = `<p class="quote">${quote}</p>
-  <p class="source">${source}`;
+  htmlGoesHere = `<p class="quote">${quote}</p> 
+                  <p class="source">${source}`;
 
-  if (citation) {
-    htmlGoesHere = htmlGoesHere + `<span class="citation">${getQuotes.citation}</span>`;
+
+  if (citation) {  /* if there is citation and NOT year */
+    htmlGoesHere = htmlGoesHere + `<span class="citation">${citation}</span>`;
   }
-  if (year) {
-    htmlGoesHere = htmlGoesHere + `<span class="year">${getQuotes.year}</span>`;
+  if (year) { /* if there is year and NOT citation */
+    htmlGoesHere = htmlGoesHere + `<span class="year">${year}</span>`;
+  }
+  if (category) {
+    htmlGoesHere = htmlGoesHere + `<span class="citation">${category}</span>`;
   }
 
-  htmlGoesHere = htmlGoesHere + `</p > </div >`;
+  htmlGoesHere = htmlGoesHere + `</p></div>`;
 
   document.getElementById('quote-box').innerHTML = htmlGoesHere;
 }
 
 /* function to create random color */
 
-function randomColor() {
-  var x = Math.floor(Math.random() * 256);
-  var y = Math.floor(Math.random() * 256);
-  var z = Math.floor(Math.random() * 256);
-  var bgColor = "rgb(" + x + ", " + y + ", " + z + ")";
-  document.body.style.background = bgColor;
-}
+// function randomColor() {
+//   var x = Math.floor(Math.random() * 256);
+//   var y = Math.floor(Math.random() * 256);
+//   var z = Math.floor(Math.random() * 256);
+//   var bgColor = "rgb(" + x + ", " + y + ", " + z + ")";
+//   document.body.style.background = bgColor;
+// }
 
-function timedDisplay() {
-  printQuote();
-  var timed = setInterval(printQuote, 5000);
-  var changeColor = setInterval(randomColor, 5000);
-}
+// function timedDisplay() {
+//   printQuote();
+//   var timed = setInterval(printQuote, 5000);
+//   var changeColor = setInterval(randomColor, 5000);
+// }
 
 // random quote and random color every 5 seconds
-window.addEventListener("load", timedDisplay, false);
+// window.addEventListener("load", timedDisplay, false);
 
 /**
  * not using these because automatically displaying random quote every few seconds
  * when button with id of 'loadquote' is clicked call the printQuote function and display random quote from quotes array above
  */
-// var whenButtonIsClicked = document.getElementById('loadQuote');
-// whenButtonIsClicked.addEventListener("click", printQuote, false);  /* when button is clicked display random quote */
-//whenButtonIsClicked.addEventListener("click", randomColor, false);  /* when button is clicked display random background color */
+const whenButtonIsClicked = document.getElementById('loadQuote');
+whenButtonIsClicked.addEventListener("click", printQuote, false);  /* when button is clicked display random quote */
+// whenButtonIsClicked.addEventListener("click", randomColor, false);  /* when button is clicked display random background color */
 
 
