@@ -1,6 +1,8 @@
 # Random Quote Generator
 
 * [VIEW LIVE DEMO HERE](https://dominick-designs.github.io/random_quote_generator-v1/)
+* Changing to live demo sub-domain: https://randomquote.dominickdesigns.space/
+  * wait 24 hours for DNS to propogate 
 
 * On page load the page will display a random quote (from a local array).
 * The background color also changes with each random quote.
