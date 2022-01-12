@@ -42,7 +42,9 @@ let quotes = [
     citation: "Terrapin Station",
     year: "July 27, 1977"
   }
-]
+];
+
+console.log(quotes)
 
 /***
   function to store a random number and output a random quote from the quotes variable above
