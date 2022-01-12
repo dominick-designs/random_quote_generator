@@ -1,6 +1,6 @@
 # Random Quote Generator
 
-- [VIEW LIVE DEMO HERE](https://randomquote.dominickdesigns.space/)
+- [VIEW LIVE DEMO HERE](https://github.com/vital-tech-results/random_quote_generator/)
 
 - On page load the page will display a random quote (from a local array).
 - The background color also changes with each random quote.
