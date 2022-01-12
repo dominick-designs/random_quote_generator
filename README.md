@@ -11,6 +11,8 @@
 - locate the `index.html` file
 - open this file locally using any browser
 
+* Refresh the page to see a random quote
+
 ## Technologies used
 
 - Vanilla JavaScript
